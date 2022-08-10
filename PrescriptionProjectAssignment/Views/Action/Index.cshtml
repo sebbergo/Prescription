@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Welcome Page</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <h2>Index</h2>
+
+    @if (Request.IsAuthenticated)
+    {
+
+        <span>Welcome @Html.Encode(User.Identity.Name) </span>
+    }
+    else
+    {
+
+        @Html.ActionLink("Login", "Login", "Account")
+        <br />
+
+        @Html.ActionLink("Register", "Register", "Account")
+    }
+</body>
